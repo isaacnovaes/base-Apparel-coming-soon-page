@@ -1,7 +1,5 @@
-@charset "UTF-8";
+@import "base/reset", "base/fonts";
 
-@import "/stylesheets/abstracts/variables", "/stylesheets/abstracts/mixins";
+@import "abstracts/variables", "abstracts/mixins";
 
-@import "/stylesheets/base/reset", "/stylesheets/base/fonts";
-
-@import "/stylesheets/layout/layout";
+@import "layout/layout";

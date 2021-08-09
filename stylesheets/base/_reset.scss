@@ -36,11 +36,8 @@ a {
  * Correct the inability to style clickable types in iOS and Safari.
  */
 
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-	-webkit-appearance: button;
+button, input, textarea {
+	appearance: none;
 }
 
 /**
@@ -81,6 +78,7 @@ button:-moz-focusring,
 		scroll-behavior: auto !important;
 	}
 }
+
 
 //Style the scrollbar
 
