@@ -9,20 +9,21 @@ header {
 				outline: none;
 				border: none;
 				border-radius: 5px;
-				box-shadow: 0 0 0 5px white, 0 0 0 7px hsl(0, 46%, 66%);
+				box-shadow: 0 0 0 4px white, 0 0 0 6px black;
 			}
 		}
 		img {
 			width: 45%;
 			padding: 5px;
+			transition: 0.3s ease-in;
 		}
 	}
 }
 
 div.image-container {
-	img {
-		width: 100%;
-	}
+	background: url(../../images/hero-mobile.jpg) no-repeat;
+	background-size: cover;
+	height: 38vh;
 }
 
 main {
@@ -59,20 +60,34 @@ main {
 			border-radius: 20px;
 			height: 40px;
 			position: relative;
-			[type="email"] {
+			transition: 0.3s ease-in;
+
+			#error-icon {
+				content: " ";
+				display: block;
+				width: 25px;
+				height: 25px;
+				background: url(../../images/icon-error.svg) no-repeat center;
+				position: absolute;
+				right: 21%;
+				top: 6px;
+				opacity: 0;
+				transition: 0.3s ease-in;
+			}
+
+			[type="text"] {
 				position: absolute;
 				left: 0;
 				padding: 10px;
-				width: 70%;
+				width: 72%;
 				border: none;
 				background-color: transparent;
-				color: $desaturated-red;
 
-                &:focus {
-                    outline: none;
-                }
+				&:focus {
+					outline: none;
+				}
 				&::placeholder {
-					color: hsla(0, 36%, 70%, 0.671);
+					color: hsla(0, 36%, 70%, 0.5);
 				}
 			}
 			[type="submit"] {
@@ -82,16 +97,28 @@ main {
 				border: none;
 				border-radius: 20px;
 				width: 20%;
-                max-width: 100px;
+				max-width: 100px;
 				height: 42px;
-				background: no-repeat center url(../images/icon-arrow.svg) , linear-gradient($gradient-first);
+				background: no-repeat center url(../../images/icon-arrow.svg), linear-gradient($gradient-first);
+				box-shadow: 0 10px 20px hsla(0, 36%, 70%, 0.7);
+				transition: 0.3s ease-in;
 
-                &:hover {
-                    background: no-repeat center url(../images/icon-arrow.svg) , linear-gradient($gradient-second);
-                    cursor: pointer;
-                }
+				&:hover {
+					background: no-repeat center url(../../images/icon-arrow.svg), linear-gradient($gradient-second);
+					box-shadow: 0 10px 20px $desaturated-red;
+					cursor: pointer;
+				}
 			}
+		}
+		#error-message {
+			display: block;
+			margin-top: 12px;
+			font-family: $font;
+			font-weight: 300;
+			font-size: 1.1rem;
+			color: rgb(248, 10, 10);
+			opacity: 0;
+			transition: 0.3s ease-in;
 		}
 	}
 }
-

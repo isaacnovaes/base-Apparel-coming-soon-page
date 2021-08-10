@@ -96,17 +96,21 @@ header a:focus img {
   outline: none;
   border: none;
   border-radius: 5px;
-  -webkit-box-shadow: 0 0 0 5px white, 0 0 0 7px #d08080;
-          box-shadow: 0 0 0 5px white, 0 0 0 7px #d08080;
+  -webkit-box-shadow: 0 0 0 4px white, 0 0 0 6px black;
+          box-shadow: 0 0 0 4px white, 0 0 0 6px black;
 }
 
 header a img {
   width: 45%;
   padding: 5px;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
 }
 
-div.image-container img {
-  width: 100%;
+div.image-container {
+  background: url(../../images/hero-mobile.jpg) no-repeat;
+  background-size: cover;
+  height: 38vh;
 }
 
 main {
@@ -144,36 +148,51 @@ main form div.input-container {
   border-radius: 20px;
   height: 40px;
   position: relative;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
 }
 
-main form div.input-container [type="email"] {
+main form div.input-container #error-icon {
+  content: " ";
+  display: block;
+  width: 25px;
+  height: 25px;
+  background: url(../../images/icon-error.svg) no-repeat center;
+  position: absolute;
+  right: 21%;
+  top: 6px;
+  opacity: 0;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+}
+
+main form div.input-container [type="text"] {
   position: absolute;
   left: 0;
   padding: 10px;
-  width: 70%;
+  width: 72%;
   border: none;
   background-color: transparent;
-  color: #ce9797;
 }
 
-main form div.input-container [type="email"]:focus {
+main form div.input-container [type="text"]:focus {
   outline: none;
 }
 
-main form div.input-container [type="email"]::-webkit-input-placeholder {
-  color: rgba(206, 151, 151, 0.671);
+main form div.input-container [type="text"]::-webkit-input-placeholder {
+  color: rgba(206, 151, 151, 0.5);
 }
 
-main form div.input-container [type="email"]:-ms-input-placeholder {
-  color: rgba(206, 151, 151, 0.671);
+main form div.input-container [type="text"]:-ms-input-placeholder {
+  color: rgba(206, 151, 151, 0.5);
 }
 
-main form div.input-container [type="email"]::-ms-input-placeholder {
-  color: rgba(206, 151, 151, 0.671);
+main form div.input-container [type="text"]::-ms-input-placeholder {
+  color: rgba(206, 151, 151, 0.5);
 }
 
-main form div.input-container [type="email"]::placeholder {
-  color: rgba(206, 151, 151, 0.671);
+main form div.input-container [type="text"]::placeholder {
+  color: rgba(206, 151, 151, 0.5);
 }
 
 main form div.input-container [type="submit"] {
@@ -185,10 +204,100 @@ main form div.input-container [type="submit"] {
   width: 20%;
   max-width: 100px;
   height: 42px;
-  background: no-repeat center url(../images/icon-arrow.svg), linear-gradient(135deg, #f8bfbf, #ee8c8c);
+  background: no-repeat center url(../../images/icon-arrow.svg), linear-gradient(135deg, #f8bfbf, #ee8c8c);
+  -webkit-box-shadow: 0 10px 20px rgba(206, 151, 151, 0.7);
+          box-shadow: 0 10px 20px rgba(206, 151, 151, 0.7);
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
 }
 
 main form div.input-container [type="submit"]:hover {
-  background: no-repeat center url(../images/icon-arrow.svg), linear-gradient(135deg, rgba(248, 191, 191, 0.6), #f8bfbf);
+  background: no-repeat center url(../../images/icon-arrow.svg), linear-gradient(135deg, rgba(248, 191, 191, 0.6), #ee8c8c);
+  -webkit-box-shadow: 0 10px 20px #ce9797;
+          box-shadow: 0 10px 20px #ce9797;
   cursor: pointer;
+}
+
+main form #error-message {
+  display: block;
+  margin-top: 12px;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  font-size: 1.1rem;
+  color: #f80a0a;
+  opacity: 0;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+}
+
+@media screen and (min-width: 900px) {
+  div.wrapper-all {
+    margin-left: 10%;
+    height: 100vh;
+    max-width: 2000px;
+    max-height: 1500px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 45% 50%;
+        grid-template-columns: 45% 50%;
+    -ms-grid-rows: 100px 100px auto;
+        grid-template-rows: 100px 100px auto;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    row-gap: 4rem;
+    -webkit-column-gap: 5%;
+            column-gap: 5%;
+  }
+  header {
+    margin: 0;
+    max-width: 400px;
+    padding-top: 40px;
+  }
+  div.image-container {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-area: 1/2/4/3;
+    background: url(../../images/hero-desktop.jpg) no-repeat;
+    background-size: cover;
+    height: auto;
+  }
+  main {
+    margin: 0;
+    padding-top: 50px;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-area: 2/1/4/2;
+    max-width: 500px;
+  }
+  main section h1.first-title, main section h1.second-title, main section p,
+  main section h1.second-title {
+    text-align: left;
+    font-size: 4.5rem;
+  }
+  main section p {
+    text-align: left;
+    font-size: 1.15rem;
+  }
+  main form {
+    margin: 60px 0;
+  }
+  main form div.input-container {
+    height: 50px;
+  }
+  main form div.input-container #error-icon {
+    top: 10.5px;
+  }
+  main form div.input-container::after {
+    top: 10px;
+  }
+  main form div.input-container [type="text"] {
+    top: 5px;
+  }
+  main form div.input-container [type="submit"] {
+    height: 52px;
+  }
 }
