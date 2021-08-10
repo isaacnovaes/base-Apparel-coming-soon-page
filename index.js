@@ -5,6 +5,8 @@ const errorMessage = document.getElementById("error-message");
 
 function checkEmail() {
 	if (input.value === "" || input.value === " ") {
+		errorMessage.style.opacity = "1";
+		errorMessage.innerHTML = "Email field is empty";
 		return false;
 	}
 	if (!input.value.includes("@")) {

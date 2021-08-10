@@ -308,8 +308,8 @@ header a img {
 }
 
 main section {
-  -webkit-animation: myAnim 1s ease 1.5s both;
-          animation: myAnim 1s ease 1.5s both;
+  -webkit-animation: text-entrance 1s ease 1.5s both;
+          animation: text-entrance 1s ease 1.5s both;
 }
 
 main form {
@@ -343,7 +343,7 @@ main form {
   }
 }
 
-@-webkit-keyframes myAnim {
+@-webkit-keyframes text-entrance {
   0% {
     -webkit-transform: scale(0);
             transform: scale(0);
@@ -354,7 +354,7 @@ main form {
   }
 }
 
-@keyframes myAnim {
+@keyframes text-entrance {
   0% {
     -webkit-transform: scale(0);
             transform: scale(0);

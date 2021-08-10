@@ -3,7 +3,7 @@ header a img {
 }
 main {
 	section {
-		animation: myAnim 1s ease 1.5s both;
+		animation: text-entrance 1s ease 1.5s both;
 	}
 	form {
 		animation: form-entrance 1s ease 2.5s both;
@@ -21,7 +21,7 @@ main {
 		transform: translateX(0) rotate(0deg);
 	}
 }
-@keyframes myAnim {
+@keyframes text-entrance {
 	0% {
 		transform: scale(0);
 	}
