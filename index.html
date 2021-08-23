@@ -10,7 +10,7 @@
 	<body>
 		<div class="wrapper-all">
 			<header>
-				<a href="http://">
+				<a href="#">
 					<img src="/images/logo.svg" alt="base apparel logo" />
 				</a>
 			</header>
@@ -24,13 +24,13 @@
 						up-to-date with announcements and our launch deals.
 					</p>
 				</section>
-				<form netlify autocomplete="off" onsubmit="return validateForm()">
+				<form netlify autocomplete="off" novalidate>
 					<div class="input-container">
 						<div id="error-icon"></div>
-						<input type="text" name="userEmail" placeholder="Email Address" aria-label="email" id="input-value" />
+						<input type="email" name="userEmail" placeholder="Email Address" aria-label="email" id="input-value" />
 						<input type="submit" value="" />
 					</div>
-					<div id="error-message">Please provide a valid email</div>
+					<div id="error-message"></div>
 				</form>
 			</main>
 		</div>
